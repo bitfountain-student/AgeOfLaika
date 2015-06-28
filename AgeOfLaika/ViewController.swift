@@ -27,7 +27,20 @@ class ViewController: UIViewController {
     let factor = 7
     resultLabel.hidden = false
     resultLabel.text = "\(factor * textField.text.toInt()!) in dog years"
+     textField.resignFirstResponder()
+
   }
 
+  @IBAction func trueButtonPressed(sender: UIButton) {
+    resultLabel.hidden = false
+    
+    if textField.text.toInt()! <= 2 {
+      resultLabel.text = "\( Double(textField.text.toInt()!) * 10.5)"
+    } else {
+      resultLabel.text = "\((textField.text.toInt()! - 2) * 4 + 21)"
+    }
+    resultLabel.text = resultLabel.text! + " in dog years"
+    textField.resignFirstResponder()
+  }
 }
 
